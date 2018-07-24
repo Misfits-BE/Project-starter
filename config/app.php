@@ -78,6 +78,18 @@ return [
     |
     */
 
+    /*
+     |--------------------------------------------------------------------------
+     | Used Editor Configuration
+     |--------------------------------------------------------------------------
+     | Configure the editor you want to user. Below are the listed
+     | the available options. With this configuration you can open the file
+     | That triggers Whoops! error handler in your editor.
+     |
+     | Available options: sublime, textmate, emacs, macvim, phpstorm, idea, vscode, atom
+     */
+    'editor' => env('EDITOR', 'phpstorm'),
+
     'locale' => 'en',
 
     /*
@@ -150,6 +162,8 @@ return [
         /*
          * Package Service Providers...
          */
+        App\Providers\ViewServiceProvider::class,
+        App\Providers\RepositoryServiceProvider::class,
 
         /*
          * Application Service Providers...
