@@ -25,3 +25,9 @@ Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm'
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
+
+// Account routes
+Route::get('/account/info', 'Account\InformationSettingsController@index')->name('account.info');
+Route::patch('/account/info', 'Account\InformationSettingsController@update')->name('account.info.update');
+Route::get('/account/security', 'Account\SecuritySettingsController@index')->name('account.security');
+Route::patch('/account/security', 'Account\SecuritySettingsController@update')->name('account.security.update');

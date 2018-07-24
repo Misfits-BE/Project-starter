@@ -3,6 +3,7 @@
 namespace App\Interfaces;
 
 use App\User;
+use Illuminate\Contracts\Pagination\Paginator;
 
 /**
  * Interface UserRepositoryInterface
@@ -18,4 +19,12 @@ interface AccountRepositoryInterface
      * @return User
      */
     public function getUser(?int $userId = null): User;
+
+    /**
+     * Get all the users from the storage based on role.
+     *
+     * @param  null|string $role The user role from the collection. Defaults to all
+     * @return Paginator
+     */
+    public function getUsersByRole(string $role = 'all'): Paginator;
 }
