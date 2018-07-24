@@ -19,6 +19,8 @@
             <div class="col-md-9">
                 <div class="card">
                     <div class="card-header">Account security</div>
+                    @include('flash::message') {{-- Flash session view partial --}}
+
                     <div class="card-body">
                         <form action="{{ route('account.security.update') }}" method="POST">
                             @csrf               {{-- Form field protection --}}
@@ -30,6 +32,29 @@
                                 <div class="col-md-9">
                                     <input type="password" class="form-control @error('password', 'is-invalid')" placeholder="Your new password" @input('password')>
                                     @error('password')
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="confirmation" class="col-md-3 col-form-label">Repeat password <span class="text-danger">*</span></label>
+
+                                <div class="col-md-9">
+                                    <input type="password" class="form-control @error('password_confirmation', 'is-invalid')" placeholder="Repeat password" @input('password_confirmation')>
+                                    @error('password_confirmation')
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <div class="form-group row mb-0">
+                                <div class="offset-md-3 col-md-9">
+                                    <button type="submit" class="btn btn-outline-success">
+                                        Save
+                                    </button>
+
+                                    <button type="reset" class="btn btn-outline-danger">
+                                        Reset
+                                    </button>
                                 </div>
                             </div>
                         </form>

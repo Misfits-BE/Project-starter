@@ -48,7 +48,10 @@ class InformationSettingsController extends Controller
      */
     public function update(InformationValidation $input): RedirectResponse
     {
-        $this->accountRepository->getUser()->update($input->all());
+        if ($this->accountRepository->getUser()->update($input->all())) {
+            flash("Your account information has been updated in the application.")->success()->important();
+        }
+
         return redirect()->route('account.info');
     }
 }

@@ -19,6 +19,8 @@
             <div class="col-md-9">
                 <div class="card">
                     <div class="card-header">Account information</div>
+                    @include('flash::message') {{-- Flash session view partial --}}
+
                     <div class="card-body">
                         <form action="{{ route('account.info.update') }}" method="POST">
                             @csrf                   {{-- Form field protection --}}

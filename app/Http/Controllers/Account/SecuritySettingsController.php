@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Account;
 
+use App\Http\Requests\Account\SecurityValidation;
 use App\Interfaces\AccountRepositoryInterface;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -37,5 +39,20 @@ class SecuritySettingsController extends Controller
     public function index(): View
     {
         return view('account.settings-security');
+    }
+
+    /**
+     * Update the account security in the application.
+     *
+     * @param  SecurityValidation $input The form request that handles the input validation.
+     * @return RedirectResponse
+     */
+    public function update(SecurityValidation $input): RedirectResponse
+    {
+        if ($this->accountRepository->getUser()->update($input->all())) {
+            flash('Your account security has been updated in the application.')->success()->important();
+        }
+
+        return redirect()->route('account.security');
     }
 }
