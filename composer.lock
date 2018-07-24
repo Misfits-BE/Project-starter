@@ -4,8 +4,65 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "fdde0e8d8c3bb0b1476c2fe94f4f57a9",
+    "content-hash": "1a41214a70c7f0843839bf993ea2f01d",
     "packages": [
+        {
+            "name": "activismebe/laravel-form-helpers",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/CPSB/Validation-helper.git",
+                "reference": "adb91cb42b7e3c1f88be059a8b4f86de5aba64cc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/CPSB/Validation-helper/zipball/adb91cb42b7e3c1f88be059a8b4f86de5aba64cc",
+                "reference": "adb91cb42b7e3c1f88be059a8b4f86de5aba64cc",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "laravel/laravel": "~5.5",
+                "phpunit/phpunit": "~6.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "ActivismeBE\\FormHelper\\FormServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ActivismeBE\\FormHelper\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tim Joosten",
+                    "email": "tim@activisme.be"
+                }
+            ],
+            "description": "Handle form model binding, old input binding and validation error messages in a clean easy way.",
+            "keywords": [
+                "eloquent",
+                "form",
+                "helpers",
+                "html",
+                "input",
+                "laravel",
+                "session",
+                "validation"
+            ],
+            "time": "2017-11-17T23:32:24+00:00"
+        },
         {
             "name": "dnoegel/php-xdg-base-dir",
             "version": "0.1",
@@ -738,6 +795,60 @@
                 "storage"
             ],
             "time": "2018-05-07T08:44:23+00:00"
+        },
+        {
+            "name": "misfits/flash",
+            "version": "3.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Misfits-BE/flash.git",
+                "reference": "5bccf725c6aa46a8367abb5f565e3d3666fd5c82"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Misfits-BE/flash/zipball/5bccf725c6aa46a8367abb5f565e3d3666fd5c82",
+                "reference": "5bccf725c6aa46a8367abb5f565e3d3666fd5c82",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "dev-master",
+                "phpunit/phpunit": "^6.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Laracasts\\Flash\\FlashServiceProvider"
+                    ],
+                    "aliases": {
+                        "Flash": "Laracasts\\Flash\\Flash"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Laracasts\\Flash": "src/"
+                },
+                "files": [
+                    "src/Laracasts/Flash/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jeffrey Way",
+                    "email": "jeffrey@laracasts.com"
+                }
+            ],
+            "description": "Easy flash notifications",
+            "time": "2018-05-17T17:15:22+00:00"
         },
         {
             "name": "monolog/monolog",
